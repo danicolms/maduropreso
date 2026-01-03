@@ -67,6 +67,25 @@
             margin: 10px 0 5px 0;
             font-size: 1.1rem;
         }
+        .product-card p {
+            margin: 5px 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .buy-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .buy-button:hover {
+            background-color: #45a049;
+        }
         .loading {
             text-align: center;
             color: #666;
@@ -121,16 +140,27 @@
             }
 
             container.className = 'product-grid';
-            container.innerHTML = products.map(product => `
-                <div class="product-card">
-                    ${product.images && product.images.length > 0 ?
-                        `<img src="${product.images[0].src}" alt="${product.title}">` :
-                        '<div style="height: 200px; background: #eee; display: flex; align-items: center; justify-content: center;">Sin imagen</div>'
-                    }
-                    <h3>${product.title}</h3>
-                    <p>${product.description || 'Sin descripción'}</p>
-                </div>
-            `).join('');
+            container.innerHTML = products.map(product => {
+                // Check if product has a sales channel URL (Pop-Up Store)
+                const salesChannelUrl = product.sales_channel_properties?.url ||
+                                       product.external?.handle ||
+                                       null;
+
+                return `
+                    <div class="product-card">
+                        ${product.images && product.images.length > 0 ?
+                            `<img src="${product.images[0].src}" alt="${product.title}">` :
+                            '<div style="height: 200px; background: #eee; display: flex; align-items: center; justify-content: center;">Sin imagen</div>'
+                        }
+                        <h3>${product.title}</h3>
+                        <p>${product.description || 'Sin descripción'}</p>
+                        ${salesChannelUrl ?
+                            `<a href="${salesChannelUrl}" target="_blank" rel="noopener noreferrer" class="buy-button">Comprar</a>` :
+                            '<p style="color: #999; font-size: 0.9rem;">Publicar en Pop-Up Store</p>'
+                        }
+                    </div>
+                `;
+            }).join('');
         }
 
         // Load products on page load
