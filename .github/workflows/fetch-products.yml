@@ -1,0 +1,45 @@
+name: Fetch Printify Products
+
+on:
+  workflow_dispatch: # Manual trigger only
+  push:
+    branches:
+      - main
+
+jobs:
+  fetch-products:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch Products from Printify
+        env:
+          PRINTIFY_API_KEY: ${{ secrets.PRINTIFY_API_KEY }}
+        run: |
+          # Fetch shops
+          SHOPS=$(curl -s -H "Authorization: Bearer $PRINTIFY_API_KEY" \
+            https://api.printify.com/v1/shops.json)
+
+          echo "Shops response: $SHOPS"
+
+          # Get first shop ID
+          SHOP_ID=$(echo $SHOPS | jq -r '.[0].id')
+
+          echo "Shop ID: $SHOP_ID"
+
+          # Fetch products
+          curl -s -H "Authorization: Bearer $PRINTIFY_API_KEY" \
+            "https://api.printify.com/v1/shops/$SHOP_ID/products.json" \
+            > products.json
+
+          echo "Products fetched successfully"
+          cat products.json
+
+      - name: Commit and Push
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add products.json
+          git diff --staged --quiet || git commit -m "Update products [skip ci]"
+          git push
