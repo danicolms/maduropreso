@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/danicolms/maduropreso#readme",
   "dependencies": {
+    "animejs": "^4.2.2",
     "react": "^19.2.3",
     "react-dom": "^19.2.3"
   },

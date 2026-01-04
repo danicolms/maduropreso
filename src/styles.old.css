@@ -1,0 +1,309 @@
+.poppins-light {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.damion {
+    font-family: "Damion", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0.5em 0 4em 0;
+    width: 100%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #ff69b4;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 100vh;
+}
+
+.title-logo {
+    scale: 1;
+    max-width: 400px;
+    background: white;
+    padding: 1rem 0.5rem;
+    border: 3px solid black;
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    margin: 3rem 0 4rem 0;
+    box-shadow: 8px 8px 0px #ff6b9d;
+    transition: scale 0.3s ease;
+}
+
+.title-logo:hover {
+    scale: 1.1;
+}
+
+.main-logo {
+    max-width: 150px;
+    height: auto;
+    margin: 0 0.5rem 1rem 0;
+}
+
+.circular-logo {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 2rem 0 1rem 0;
+}
+
+.circular-logo svg {
+    width: 100%;
+    height: 100%;
+}
+
+.circular-logo text {
+    font-family: "Damion", cursive;
+    font-size: 48px;
+    fill: #333;
+    text-transform: lowercase;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    width: 100%;
+    align-items: center;
+    padding: 0 2rem;
+    justify-items: center;
+}
+
+.content-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.product-column {
+    position: relative;
+}
+
+.tweet-box {
+    background: white;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 8px 8px 0px #7b68ee;
+    border: 4px solid #000;
+    max-width: 400px;
+    text-decoration: none;
+    color: #000;
+    position: relative;
+    overflow: hidden;
+}
+
+.sparkles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.sparkle {
+    position: absolute;
+    font-size: 24px;
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+.tweet-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.tweet-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff6b9d, #feca57);
+    border: 3px solid #000;
+}
+
+.tweet-author {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.tweet-handle {
+    color: #666;
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+.tweet-text {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.tweet-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: center 20%;
+    border-radius: 20px;
+    border: 3px solid #000;
+}
+
+.product-box {
+    background: white;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 8px 8px 0px #feca57;
+    border: 4px solid #000;
+    max-width: 400px;
+    text-decoration: none;
+    color: #000;
+    position: relative;
+}
+
+.product-box-inner {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image {
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+.product-tag {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 120px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.shop-button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: #ffeb3b;
+    color: #000;
+    border: 3px solid #000;
+    box-shadow: 3px 3px 0px #ff6b9d;
+    text-transform: lowercase;
+    display: inline-block;
+    text-align: center;
+}
+
+.shop-button-wrapper {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+/* Hero Section - Y2K Magazine Style */
+.hero-section {
+    position: relative;
+    margin: 3rem 0 0 4rem;
+    transform: rotate(-2deg);
+    transition: transform 0.3s ease;
+    max-width: 600px;
+    filter: drop-shadow(12px 12px 20px rgba(0, 0, 0, 0.2));
+}
+
+.hero-section:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.hero-paper {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding-top: 2rem;
+}
+
+.hero-logo {
+    width: 90%;
+    max-width: none;
+    height: auto;
+    filter: drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.1));
+}
+
+.hero-text {
+    font-family: "Bahianita", cursive;
+    font-size: 2.2rem;
+    color: #333;
+    text-align: center;
+    line-height: 1.3;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .content-box:last-child {
+        margin-top: 0;
+    }
+
+    .hero-section {
+        max-width: 90%;
+        margin: 2rem auto;
+        transform: rotate(-1deg);
+    }
+
+    .hero-text {
+        font-size: 1.6rem;
+    }
+
+    .hero-content {
+        width: 80%;
+    }
+}
