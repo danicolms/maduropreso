@@ -7,20 +7,26 @@ body {
 
 body {
     font-family: "Poppins", sans-serif;
-    background: #ff69b4;
+    background: #ff6b9d;
+    background-image: url("/fabric-wallpaper.png");
     background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
     min-height: 100dvh;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    gap: 4rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: center;
 }
 
 .hero-section {
     position: relative;
-    margin: 3rem 0 0 4rem;
+    margin: 3rem 0 0 2rem;
     transform: rotate(-5deg);
-    transition: transform 0.3s e;
     max-width: 450px;
 }
 
@@ -66,11 +72,93 @@ body {
     filter: drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.1));
 }
 
-/* Responsive */
+/* Header Section with Scrap Letters */
+.header-section {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 3rem 1rem 1rem 1rem;
+}
+
+.scrap-letters {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    max-width: 100%;
+}
+
+.scrap-word {
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.scrap-letter {
+    height: 60px;
+    width: auto;
+    display: block;
+    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.15));
+}
+
+.scrap-letter:hover {
+    transform: rotate(5deg) scale(1.1);
+}
+
+/* Responsive - Reduce padding gradually */
+@media (max-width: 1200px) {
+    .main-container {
+        padding: 2.5rem;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .main-container {
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    .hero-section {
+        margin: 2rem 0 0 1rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem;
+        gap: 2rem;
+    }
+
+    .hero-section {
+        margin: 1rem 0;
+    }
+
+    .header-section {
+        width: 100%;
+        padding: 1rem 0;
+        align-items: center;
+    }
+
+    .scrap-letters {
+        justify-content: center;
+        max-width: 90%;
+    }
+}
+
 @media (max-width: 768px) {
+    .main-container {
+        padding: 1rem;
+    }
+
     .hero-section {
         max-width: 90%;
-        margin: 2rem auto;
         transform: rotate(-1deg);
     }
 
@@ -80,5 +168,23 @@ body {
 
     .hero-content {
         width: 80%;
+    }
+
+    .scrap-letter {
+        height: 50px;
+    }
+
+    .scrap-word {
+        gap: 0.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .scrap-letter {
+        height: 40px;
+    }
+
+    .scrap-word {
+        gap: 0.2rem;
     }
 }
