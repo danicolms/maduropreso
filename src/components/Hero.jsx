@@ -9,7 +9,7 @@ function Hero() {
       <div className="hero-content">
         <img src="/logo.png" alt="maduropreso" className="hero-logo" />
         <p className="hero-text">
-          primer blog dedicado al auge y la caida de este SAPO TETÓN
+          primer blog dedicado al auge y la caida de este SAPO BIGO(TE)TÓN
         </p>
       </div>
     </div>
