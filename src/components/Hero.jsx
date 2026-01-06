@@ -9,11 +9,11 @@ function Hero() {
       <div className="hero-content">
         <img src="/logo.png" alt="maduropreso" className="hero-logo" />
         <p className="hero-text">
-          PRIMER BLOG DEDICADO A LA CAPTURA Y APRESAMIENTO DE NICOLAS MADURO
+          primer blog dedicado al auge y la caida de este SAPO TETÓN
         </p>
       </div>
     </div>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

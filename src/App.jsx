@@ -1,6 +1,7 @@
 import "./styles.css";
 import Hero from "./components/Hero";
 import Header from "./components/Header";
+import Collage from "./components/Collage";
 
 function App() {
   console.log(
@@ -9,7 +10,10 @@ function App() {
   return (
     <div className="main-container">
       <Hero />
-      <Header />
+      <div className="right-section">
+        <Header />
+        <Collage />
+      </div>
     </div>
   );
 }
