@@ -31,6 +31,33 @@ body {
     transform: rotate(5deg) scale(1.1);
 }
 
+.footer {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.footer-link {
+    opacity: 0.4;
+    transition: opacity 0.2s ease;
+}
+
+.footer-link:hover {
+    opacity: 0.8;
+}
+
+.footer-logo {
+    width: 24px;
+    height: auto;
+    display: block;
+}
+
 .main-container {
     display: flex;
     gap: 4rem;

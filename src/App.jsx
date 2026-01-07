@@ -5,6 +5,7 @@ import EndCollage from "./components/EndCollage";
 import StraightArrow from "./components/StraightArrow";
 import CurvedArrow from "./components/CurvedArrow";
 import ShopButton from "./components/ShopButton";
+import Footer from "./components/Footer";
 
 function App() {
   console.log(
@@ -24,6 +25,7 @@ function App() {
           <EndCollage />
         </section>
       </main>
+      <Footer />
     </>
   );
 }
