@@ -1,6 +1,6 @@
 function Hero() {
   return (
-    <div className="hero-section">
+    <section className="hero-section">
       <img
         src="/hero-paper.png"
         alt="Paper background"
@@ -12,7 +12,7 @@ function Hero() {
           primer blog dedicado al auge y la caida de este sapo bigotetón
         </p>
       </div>
-    </div>
+    </section>
   );
 }
 

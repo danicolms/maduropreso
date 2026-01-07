@@ -3,10 +3,10 @@ import SailingCollage from "./SailingCollage";
 
 function EndCollage() {
   return (
-    <div className="end-collage">
+    <section className="end-collage">
       <ScrapLetterTitle />
       <SailingCollage />
-    </div>
+    </section>
   );
 }
 

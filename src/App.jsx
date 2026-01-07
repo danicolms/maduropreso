@@ -2,21 +2,25 @@ import "./styles.css";
 import Hero from "./components/Hero";
 import IntroductionCollage from "./components/IntroductionCollage";
 import EndCollage from "./components/EndCollage";
+import StraightArrow from "./components/StraightArrow";
+import CurvedArrow from "./components/CurvedArrow";
 
 function App() {
   console.log(
     "Are you one of the tech fellows? This project's repository is public for all to see! ----> https://github.com/danicolms/maduropreso✨",
   );
   return (
-    <div className="main-container">
-      <div className="left-section">
+    <main className="main-container">
+      <section className="left-section">
         <Hero />
         <IntroductionCollage />
-      </div>
-      <div className="right-section">
+      </section>
+      <StraightArrow />
+      <CurvedArrow />
+      <section className="right-section">
         <EndCollage />
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
 
