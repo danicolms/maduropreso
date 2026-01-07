@@ -225,6 +225,17 @@ body {
     z-index: 2;
 }
 
+.tv-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: auto;
+    z-index: 10;
+    pointer-events: none;
+}
+
 /* End Collage (Header + Collage) */
 .end-collage {
     width: 100%;
@@ -303,6 +314,17 @@ body {
     transform: rotate(-2deg) scale(1.05);
 }
 
+.frame-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: auto;
+    z-index: 10;
+    pointer-events: none;
+}
+
 .collage-frame {
     width: 100%;
     max-width: 420px;
@@ -327,8 +349,7 @@ body {
 .collage-boat {
     position: absolute;
     bottom: 15%;
-    right: -40%;
-    width: 100%;
+    right: -30%;
     height: auto;
     max-height: 220px;
     min-height: 80px;
@@ -345,8 +366,7 @@ body {
 .collage-cloud {
     position: absolute;
     top: 2%;
-    left: -40%;
-    width: 100%;
+    left: -15%;
     height: auto;
     max-height: 140px;
     min-height: 70px;
@@ -528,6 +548,10 @@ body {
 
     .tv-section {
         scale: 1.15;
+    }
+
+    .tv-overlay {
+        left: 18%;
     }
 
     .scrap-letter {
