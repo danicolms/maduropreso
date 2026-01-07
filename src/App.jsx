@@ -1,7 +1,7 @@
 import "./styles.css";
 import Hero from "./components/Hero";
-import Header from "./components/Header";
-import Collage from "./components/Collage";
+import IntroductionCollage from "./components/IntroductionCollage";
+import EndCollage from "./components/EndCollage";
 
 function App() {
   console.log(
@@ -9,10 +9,12 @@ function App() {
   );
   return (
     <div className="main-container">
-      <Hero />
+      <div className="left-section">
+        <Hero />
+        <IntroductionCollage />
+      </div>
       <div className="right-section">
-        <Header />
-        <Collage />
+        <EndCollage />
       </div>
     </div>
   );
