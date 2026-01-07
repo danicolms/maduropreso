@@ -28,7 +28,7 @@ function TV() {
       >
         {isHovered && (
           <img
-            src="/scrap-letters/first-day-star.png"
+            src="/first-day-star.png"
             alt="First day star overlay"
             className="tv-overlay"
           />

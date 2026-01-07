@@ -24,7 +24,7 @@ function SailingCollage() {
         >
           {isFrameHovered && (
             <img
-              src="/scrap-letters/happy-last-day.png"
+              src="/happy-last-day.png"
               alt="Happy last day overlay"
               className="frame-overlay"
             />
