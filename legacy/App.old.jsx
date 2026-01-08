@@ -1,37 +1,37 @@
-import { useEffect, useRef } from 'react'
-import { animate } from 'animejs'
-import './styles.css'
+import { useEffect, useRef } from "react";
+import { animate } from "animejs";
+import "./styles.css";
 
 function App() {
-  const titleRef = useRef(null)
-  const tweetBoxRef = useRef(null)
-  const productBoxRef = useRef(null)
-  const shopButtonRef = useRef(null)
+  const titleRef = useRef(null);
+  const tweetBoxRef = useRef(null);
+  const productBoxRef = useRef(null);
+  const shopButtonRef = useRef(null);
 
   useEffect(() => {
     // Title spring jump animation
-    const title = titleRef.current
+    const title = titleRef.current;
 
     const handleTitleEnter = () => {
       animate({
         targets: title,
         translateY: -10,
         duration: 400,
-        easing: 'spring(1, 100, 10, 0)',
-      })
-    }
+        easing: "spring(1, 100, 10, 0)",
+      });
+    };
 
     const handleTitleLeave = () => {
       animate({
         targets: title,
         translateY: 0,
         duration: 400,
-        easing: 'spring(1, 100, 10, 0)',
-      })
-    }
+        easing: "spring(1, 100, 10, 0)",
+      });
+    };
 
-    title.addEventListener('mouseenter', handleTitleEnter)
-    title.addEventListener('mouseleave', handleTitleLeave)
+    title.addEventListener("mouseenter", handleTitleEnter);
+    title.addEventListener("mouseleave", handleTitleLeave);
 
     // Box hover animations
     const animateBoxHover = (box, rotation) => {
@@ -41,9 +41,9 @@ function App() {
           scale: 1.08,
           rotate: rotation,
           duration: 400,
-          easing: 'spring(1, 100, 8, 0)',
-        })
-      }
+          easing: "spring(1, 100, 8, 0)",
+        });
+      };
 
       const handleLeave = () => {
         animate({
@@ -51,31 +51,31 @@ function App() {
           scale: 1,
           rotate: 0,
           duration: 350,
-          easing: 'spring(1, 100, 8, 0)',
-        })
-      }
+          easing: "spring(1, 100, 8, 0)",
+        });
+      };
 
-      box.addEventListener('mouseenter', handleEnter)
-      box.addEventListener('mouseleave', handleLeave)
+      box.addEventListener("mouseenter", handleEnter);
+      box.addEventListener("mouseleave", handleLeave);
 
       return () => {
-        box.removeEventListener('mouseenter', handleEnter)
-        box.removeEventListener('mouseleave', handleLeave)
-      }
-    }
+        box.removeEventListener("mouseenter", handleEnter);
+        box.removeEventListener("mouseleave", handleLeave);
+      };
+    };
 
-    const tweetCleanup = animateBoxHover(tweetBoxRef.current, -3)
-    const productCleanup = animateBoxHover(productBoxRef.current, 3)
+    const tweetCleanup = animateBoxHover(tweetBoxRef.current, -3);
+    const productCleanup = animateBoxHover(productBoxRef.current, 3);
 
     // Sparkle animations
     const animateSparkles = (container) => {
-      const sparkles = container.querySelectorAll('.sparkle')
+      const sparkles = container.querySelectorAll(".sparkle");
 
       const handleEnter = () => {
         sparkles.forEach((sparkle, index) => {
-          const randomX = Math.random() * 100
-          sparkle.style.left = randomX + '%'
-          sparkle.style.top = '0%'
+          const randomX = Math.random() * 100;
+          sparkle.style.left = randomX + "%";
+          sparkle.style.top = "0%";
 
           animate({
             targets: sparkle,
@@ -95,33 +95,33 @@ function App() {
             ],
             delay: index * 100,
             duration: 2000,
-            easing: 'easeOutCubic',
+            easing: "easeOutCubic",
             loop: true,
-          })
-        })
-      }
+          });
+        });
+      };
 
       const handleLeave = () => {
         // Animation cleanup handled by loop stop
         sparkles.forEach((sparkle) => {
-          sparkle.style.opacity = 0
-        })
-      }
+          sparkle.style.opacity = 0;
+        });
+      };
 
-      container.addEventListener('mouseenter', handleEnter)
-      container.addEventListener('mouseleave', handleLeave)
+      container.addEventListener("mouseenter", handleEnter);
+      container.addEventListener("mouseleave", handleLeave);
 
       return () => {
-        container.removeEventListener('mouseenter', handleEnter)
-        container.removeEventListener('mouseleave', handleLeave)
-      }
-    }
+        container.removeEventListener("mouseenter", handleEnter);
+        container.removeEventListener("mouseleave", handleLeave);
+      };
+    };
 
-    const tweetSparkleCleanup = animateSparkles(tweetBoxRef.current)
-    const productSparkleCleanup = animateSparkles(productBoxRef.current)
+    const tweetSparkleCleanup = animateSparkles(tweetBoxRef.current);
+    const productSparkleCleanup = animateSparkles(productBoxRef.current);
 
     // Shop button animation
-    const shopButton = shopButtonRef.current
+    const shopButton = shopButtonRef.current;
 
     const handleButtonEnter = () => {
       animate({
@@ -129,9 +129,9 @@ function App() {
         scale: 1.08,
         translateY: -2,
         duration: 300,
-        easing: 'spring(1, 100, 10, 0)',
-      })
-    }
+        easing: "spring(1, 100, 10, 0)",
+      });
+    };
 
     const handleButtonLeave = () => {
       animate({
@@ -139,28 +139,33 @@ function App() {
         scale: 1,
         translateY: 0,
         duration: 250,
-        easing: 'spring(1, 100, 10, 0)',
-      })
-    }
+        easing: "spring(1, 100, 10, 0)",
+      });
+    };
 
-    shopButton.addEventListener('mouseenter', handleButtonEnter)
-    shopButton.addEventListener('mouseleave', handleButtonLeave)
+    shopButton.addEventListener("mouseenter", handleButtonEnter);
+    shopButton.addEventListener("mouseleave", handleButtonLeave);
 
     return () => {
-      title.removeEventListener('mouseenter', handleTitleEnter)
-      title.removeEventListener('mouseleave', handleTitleLeave)
-      tweetCleanup()
-      productCleanup()
-      tweetSparkleCleanup()
-      productSparkleCleanup()
-      shopButton.removeEventListener('mouseenter', handleButtonEnter)
-      shopButton.removeEventListener('mouseleave', handleButtonLeave)
-    }
-  }, [])
+      title.removeEventListener("mouseenter", handleTitleEnter);
+      title.removeEventListener("mouseleave", handleTitleLeave);
+      tweetCleanup();
+      productCleanup();
+      tweetSparkleCleanup();
+      productSparkleCleanup();
+      shopButton.removeEventListener("mouseenter", handleButtonEnter);
+      shopButton.removeEventListener("mouseleave", handleButtonLeave);
+    };
+  }, []);
 
   return (
     <>
-      <img src="/logo.png" alt="Maduro está preso" className="title-logo" ref={titleRef} />
+      <img
+        src="/logo.png"
+        alt="Maduro está preso"
+        className="title-logo"
+        ref={titleRef}
+      />
       <div className="container">
         <div className="content-box">
           <a
@@ -173,7 +178,7 @@ function App() {
             <div className="sparkles">
               {[...Array(20)].map((_, i) => (
                 <span key={i} className="sparkle">
-                  {i % 2 === 0 ? '✨' : '⭐️'}
+                  {i % 2 === 0 ? "✨" : "⭐️"}
                 </span>
               ))}
             </div>
@@ -188,7 +193,7 @@ function App() {
               Nicolas Maduro on board the USS Iwo Jima.
             </div>
             <img
-              src="/maduro-tweet.jpg"
+              src="/maduro-tweet.png"
               alt="Nicolas Maduro on board the USS Iwo Jima"
               className="tweet-image"
             />
@@ -213,7 +218,7 @@ function App() {
             <div className="sparkles">
               {[...Array(20)].map((_, i) => (
                 <span key={i} className="sparkle">
-                  {i % 2 === 0 ? '✨' : '⭐️'}
+                  {i % 2 === 0 ? "✨" : "⭐️"}
                 </span>
               ))}
             </div>
@@ -234,7 +239,7 @@ function App() {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
